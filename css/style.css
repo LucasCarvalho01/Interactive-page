@@ -116,5 +116,142 @@ img {
 }
 
 .data {
-  padding: 3rem 1rem;
+  padding: 2rem 1.5rem !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.data div {
+  display: grid;
+  place-items: center;
+}
+
+.data div + div::before {
+  display: block;
+  content: '';
+  width: 5rem;
+  height: 1px;
+  background-color: rgba(0, 0, 0, .15);
+  margin: 1.5rem 0;
+}
+
+.data h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.data span {
+  font-size: .875rem;
+  color: var(--dark-grey);
+  margin-top: .5rem;
+}
+
+progress {
+  display: block;
+  width: 100%;
+  height: 12px;
+  border: none;
+  margin-top: 2rem;
+}
+
+progress::-webkit-progress-bar {
+  background-color: rgba(0, 0, 0, .05);
+  border-radius: 1rem;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--decoration);
+  border-radius: 1rem;
+}
+
+.about {
+  border: 1px solid rgb(235, 235, 235);
+  border-radius: 8px;
+  padding: 2rem 1.5rem 1rem;
+  margin: 1.5rem 0 0;
+}
+
+.about h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about > p {
+  text-align: left;
+}
+
+.about section {
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sub-tile {
+  font-size: .9rem;
+}
+
+.pledge {
+  color: var(--decoration);
+  font-weight: 700;
+  font-size: .9rem;
+  display: inline-block;
+  margin: .5rem 0 1rem;
+}
+
+.description {
+  text-align: left !important;
+}
+
+.amount span[data-stand] {
+  font-size: 2rem;
+  color: #000;
+  font-weight: 700;
+}
+
+.left {
+  color: rgba(0, 0, 0, .4) !important;
+  font-size: .875rem;
+  position: relative;
+  top: -5px;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+#reward {
+  border: none;
+  background-color: var(--decoration);
+  color: #fff;
+  width: 150px;
+  padding: 1rem 0;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: .8rem;
+  letter-spacing: .6;
+  margin-top: 1rem;
+}
+
+.expired {
+  border: 1px solid rgba(0, 0, 0, .1) !important;
+}
+
+.expired h3 {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.expired .pledge {
+  color: rgba(60, 180, 172, .5);
+}
+
+.expired .description {
+  color: rgba(0, 0, 0, .4);
+}
+
+.expired .amount span {
+  color: rgba(0, 0, 0, .5);
+}
+
+.expired #reward {
+  background-color: rgba(0, 0, 0, .2);
 }
