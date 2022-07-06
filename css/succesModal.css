@@ -1,0 +1,52 @@
+@import './style.css';
+
+.success-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  background-color: rgba(0, 0, 0, .5);
+  width: 100%;
+  height: 100%;
+  /* display: grid; */
+  place-items: center;
+}
+
+.success-wrapper {
+  background-color: #fff;
+  margin: 0 1.5rem;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.success-wrapper img {
+  margin-bottom: 1rem;
+}
+
+.success-wrapper h2 {
+  font-size: 1.2rem;
+}
+
+.success-wrapper p {
+  margin: 2rem 0;
+  text-align: center;
+  line-height: 1.6;
+  color: var(--dark-grey);
+  font-size: .875rem;
+}
+
+#completed {
+  background-color: var(--decoration);
+  border: none;
+  width: 120px;
+  padding: 1rem 0;
+  color: #fff;
+  border-radius: 30px;
+  font-size: .875rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
