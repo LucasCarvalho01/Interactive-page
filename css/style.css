@@ -45,8 +45,6 @@ img {
 }
 
 
-
-
 .content {
   display: absolute;
   margin: 0 1.5rem;
@@ -112,6 +110,10 @@ img {
 #bookmark {
   border: none;
   background-color: transparent;
+}
+
+#bookmark img.filter {
+  filter: invert(36%) sepia(62%) saturate(763%) hue-rotate(130deg) brightness(89%) contrast(84%);
 }
 
 .data {
@@ -218,7 +220,9 @@ progress::-webkit-progress-value {
   margin-left: 5px;
 }
 
-#reward {
+#reward1,
+#reward2,
+#reward3 {
   border: none;
   background-color: var(--decoration);
   color: #fff;
@@ -251,6 +255,8 @@ progress::-webkit-progress-value {
   color: rgba(0, 0, 0, .5);
 }
 
-.expired #reward {
+.expired #reward1,
+.expired #reward2,
+.expired #reward3 {
   background-color: rgba(0, 0, 0, .2);
 }
