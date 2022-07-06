@@ -28,6 +28,16 @@
   overflow-y: auto;
 }
 
+.menu li:first-child {
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.menu li:last-child {
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+}
+
 .menu li a {
   background-color: #fff;
   display: block;
