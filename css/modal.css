@@ -64,6 +64,10 @@
   line-height: 1.75;
 }
 
+.choose.active {
+  border: 2px solid var(--decoration);
+}
+
 input[type="radio"] {
   appearance: none;
   font: inherit;
