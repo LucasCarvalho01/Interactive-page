@@ -58,4 +58,8 @@
 
 #menuHam {
   z-index: 4;
+  padding: 1rem;
+  position: relative;
+  top: -1rem;
+  right: -1rem;
 }
