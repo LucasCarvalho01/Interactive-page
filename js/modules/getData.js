@@ -13,12 +13,11 @@ export default class ShowData {
     axios.get(this.dataURL)
       .then((response) => {
         this.updateHTML(response.data);
-        console.log(response.data);
       })
       .catch((error) => console.log(error));
   }
 
-  getPercentage(current, total) {
+  static getPercentage(current, total) {
     let amount = current / total;
     amount = Math.floor(amount * 100);
 
@@ -29,7 +28,7 @@ export default class ShowData {
     this.amount.innerText = data.totalAmount.toLocaleString();
     this.people.innerText = data.totalPeople.toLocaleString();
     this.days.innerText = data.remainingDays;
-    this.progressBar.setAttribute('value', this.getPercentage(data.totalAmount, data.totalProject));
+    this.progressBar.setAttribute('value', this.constructor.getPercentage(data.totalAmount, data.totalProject));
   }
 
   init() {

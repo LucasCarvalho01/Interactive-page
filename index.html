@@ -72,10 +72,10 @@
           <span class="left">left</span>
         </div>
   
-        <button id="reward1">Select Reward</button>
+        <button id="reward1" data-option="bamboo">Select Reward</button>
       </section>
   
-      <section class="edition black">
+      <section class="edition black" >
         <h3 class="sub-title">Black Edition Stand</h3>
         <span class="pledge">Pledge $75 or more</span>
         <p class="description">You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
@@ -85,7 +85,7 @@
           <span class="left">left</span>
         </div>
   
-        <button id="reward2">Select Reward</button>
+        <button id="reward2" data-option="black">Select Reward</button>
       </section>
   
       <section class="edition mahogamy expired">
@@ -98,7 +98,7 @@
           <span class="left">left</span>
         </div>
   
-        <button id="reward3">Select Reward</button>
+        <button id="reward3" data-soldout data-option="maho">Select Reward</button>
       </section>
     </main>
   </div>
@@ -112,10 +112,10 @@
         <img src="./images/icon-close-modal.svg" alt="close modal">
       </div>
 
-      <form action="#">
-        <div class="choose">
+      <form action="#" id="form">
+        <div class="choose" data-option="stand">
           <div class="title-wrapper">
-            <input type="radio" id="noReward" name="product" value="noReward">
+            <input type="radio" id="noReward" name="product" value="stand">
             <h3>Pledge with no reward</h3>
           </div>
           <label for="noReward">
@@ -125,9 +125,9 @@
           </label>
         </div>
 
-        <div class="choose">
+        <div class="choose" data-option="bamboo">
           <div class="title-wrapper">
-            <input type="radio" id="bambooOption" name="product" value="bambooOption">
+            <input type="radio" id="bambooOption" name="product" value="bamboo">
             <div class="inner-title">
               <h3>Bamboo Stand</h3>
               <span>Pledge $25 or more</span>
@@ -142,9 +142,9 @@
           </label>
         </div>
 
-        <div class="choose">
+        <div class="choose" data-option="black">
           <div class="title-wrapper">
-            <input type="radio" id="blackOption" name="product" value="blackOption">
+            <input type="radio" id="blackOption" name="product" value="black">
             <div class="inner-title">
               <h3>Black Edition Stand</h3>
               <span>Pledge $75 or more</span>
@@ -159,9 +159,9 @@
           </label>
         </div>
 
-        <div class="choose soldout">
+        <div class="choose soldout" data-soldout data-option="maho">
           <div class="title-wrapper">
-            <input type="radio" id="mahoOption" name="product" value="mahoOption">
+            <input type="radio" id="mahoOption" name="product" value="maho">
             <div class="inner-title">
               <h3>Mahogany Special Edition</h3>
               <span>Pledge $200 or more</span>
@@ -187,6 +187,17 @@
       <h2>Thanks for your support!</h2>
       <p>Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.</p>
       <button class="completed" id="completed">Got it!</button>
+    </div>
+  </div>
+
+  <div class="pledge-input">
+    <p>Enter your pledge</p>
+    <div class="inputs">
+      <div class="with-label">
+        <label for="value">$</label>
+        <input type="number" id="value" min="0">
+      </div>
+      <button id="continue">Continue</button>
     </div>
   </div>
 
