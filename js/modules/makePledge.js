@@ -15,6 +15,7 @@ export default class MakePledge {
     this.completed = document.getElementById('completed');
     this.options = document.querySelectorAll('input[name="product"]');
     this.optionDiv = document.querySelectorAll('.choose');
+    this.progressBar = document.getElementById('progress');
     this.scrollOptions = {
       behavior: 'smooth',
       block: 'center',
@@ -62,11 +63,10 @@ export default class MakePledge {
       // When user select/change option selected on modal
       this.form.addEventListener('change', (e) => {
         // Only handle the choose if change was not from the input pledge, nor submit button
+        // And is not soldout
         if(!(e.target === this.inputValue) && !(e.target === this.submit)) {
           this.handleChoose(e);
         }
-
-        // e.stopPropagation();
       });
     }
   }
@@ -79,10 +79,12 @@ export default class MakePledge {
   }
 
   handleChoose(event) {
-    // Removes green border from previou seleciton and add on current one
-    this.optionDiv.forEach((div) => {
-      div.classList.remove('active');
+    // Removes green border from previous seleciton
+    this.optionDiv.forEach((option) => {
+      option.classList.remove('active');
     });
+
+    // Add green border on current selecion inside modal
     event.target.parentNode.parentNode.classList.add('active');
     this.createInputPledge(event.target.value);
   }
@@ -97,15 +99,15 @@ export default class MakePledge {
     this.submit.dataset.option = value;
 
     this.submit.removeEventListener('click', this.foo);
-    // this.computePledge();
     this.submit.addEventListener('click', this.foo);
   }
 
   foo(event) {
     event.preventDefault();
+    const option = event.target.dataset.option;
 
     // Check if the input value is at least the minimum required for that model
-    const valid = this.inputValue.value >= this.values[event.target.dataset.option];
+    const valid = this.inputValue.value >= this.values[option];
 
     // Values will be updated using session storage, since there's no API to update those values
     // on json file.
@@ -115,9 +117,16 @@ export default class MakePledge {
       ShowData.setTotalAmount(amountAux);
       ShowData.setTotalPeople();
 
+      if(option !== 'stand') {
+        ShowData.optionBought(option);
+      }
+
       // Update page HTML
-      this.totalAmount.innerHTML = ShowData.getTotalAmount().toString().toLocaleString();
-      this.totalPeople.innerHTML = ShowData.getTotalPeople().toString().toLocaleString();
+      this.totalAmount.innerHTML = '$' + ShowData.getTotalAmount().toLocaleString();
+      this.totalPeople.innerHTML = ShowData.getTotalPeople().toLocaleString();
+
+      // Update progress bar
+      this.progressBar.setAttribute('value', ShowData.getPercentage(+sessionStorage.totalAmount, +sessionStorage.totalProject));
 
       // Once pledge is computed, open complete modal
       this.succesModal.style.display = 'grid';
@@ -137,6 +146,9 @@ export default class MakePledge {
     this.options.forEach((option) => {
       option.checked = false;
     });
+    this.optionDiv.forEach((option) => {
+      option.classList.remove('active');
+    });
 
     // Scroll to page top after all
     window.scrollTo(0, 0);
@@ -147,7 +159,6 @@ export default class MakePledge {
   }
 
   init() {
-    console.log(this.completed);
     this.addEvent();
     return this;
   }

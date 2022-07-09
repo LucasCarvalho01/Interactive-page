@@ -15,7 +15,6 @@ export default class Menu {
   // When menu is opened, add eventlistener on window for touch.
   // If touch was not inside the menu, close it and remove the eventlistener
   closeMenu(event) {
-    console.log(event.target);
     if(event.target.tagName !== 'A' && event.target !== this.menu.firstElementChild) {
       this.actualMenu.classList.remove('active');
       window.removeEventListener('touchstart', this.closeMenu);
