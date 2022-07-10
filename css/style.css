@@ -200,7 +200,7 @@ progress::-moz-progress-bar {
 }
 
 .about section {
-  border: 1px solid rgba(0, 0, 0, .2);
+  border: 1px solid rgba(0, 0, 0, .15);
   border-radius: 8px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
@@ -280,7 +280,7 @@ progress::-moz-progress-bar {
 
 
 
-@media (min-width: 720px) {
+@media (min-width: 900px) {
  #menuHam {
   display: none;
  }
@@ -366,4 +366,85 @@ progress::-moz-progress-bar {
   opacity: .8;
  }
 
+ .data {
+  flex-direction: row;
+  padding: 3rem !important;
+  flex-wrap: wrap;
+  justify-content: space-between;
+ }
+
+ .data div {
+  flex: 1;
+  display: block;
+  padding-right: 1rem;
+ }
+
+ .data div + div::before {
+  display: none;
+ }
+
+ .data div + div {
+  border-left: 1px solid rgba(0, 0, 0, .15);
+  padding-left: 5%;
+ }
+
+ .about {
+  padding: 3rem 3rem 0;
+}
+
+.about h2 {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.about p {
+  margin-bottom: 2rem;
+}
+
+.about section {
+  padding: 2rem;
+}
+
+.sub-title {
+  display: inline-block;
+}
+
+.pledge {
+  float: right;
+  font-size: 1rem;
+  margin-top: 0;
+}
+
+.description {
+  margin: 2rem 0 1rem !important;
+}
+
+.sub-edition {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 1rem 0;
+}
+
+#reward1,
+#reward2,
+#reward3  {
+  margin-top: 0;
+  transition: .2s;
+}
+
+#reward1:hover,
+#reward2:hover,
+#reward3:hover {
+  background-color: #157a74;
+  cursor: pointer;
+}
+
+.amount span {
+  font-size: 1rem;
+}
+
+.amount span[data-stand] {
+  font-size: 2rem;
+}
 }
