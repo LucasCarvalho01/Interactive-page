@@ -131,6 +131,7 @@ input[type="radio"]:checked::before {
 
 .pledge-input {
   display: none;
+  flex-direction: column;
   border-top: 2px solid rgba(0, 0, 0, .08);
   margin-top: 1rem;
   padding-top: 1.5rem;
@@ -171,6 +172,7 @@ input[type="radio"]:checked::before {
   border-radius: 24px;
   font-weight: 700;
   font-family: 'Commissioner', sans-serif;
+  outline-color: var(--decoration);
 }
 
 .pledge-input .inputs button {
@@ -193,4 +195,87 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+@media (min-width: 900px) {
+  .modal-wrapper {
+    margin: 10rem auto;
+    width: 50vw;
+    max-width: 60rem;
+    padding: 3rem;
+  }
+
+  .modal-wrapper h2 {
+    font-size: 1.5rem;
+  }
+
+  .call {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  #closeModal {
+    right: 2rem;
+    top: 2rem;
+  }
+
+  #closeModal:hover {
+    cursor: pointer;
+  }
+
+  .choose {
+    padding: 2rem;
+  }
+
+  #modal h3 {
+    font-size: 1rem;
+  }
+
+  .choose:not(.soldout) input[type="radio"]:hover {
+    cursor: pointer;
+    border-color: var(--decoration);
+  }
+
+  .choose:not(.soldout) label:hover {
+    cursor: pointer;
+  }
+
+  .choose:not(.soldout) .label-title:hover {
+    color: var(--decoration);
+  }
+
+  .inner-title {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .inner-title span {
+    margin-top: 0;
+    font-size: 1rem;
+  }
+
+  .pledge-input {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .pledge-input p {
+    margin-bottom: 0;
+  }
+
+  .pledge-input .inputs {
+    flex: 1;
+    max-width: 240px;
+  }
+
+  .inputs input:hover {
+    border-color: var(--decoration) !important;
+    cursor: pointer;
+  }
+
+  .inputs button:hover {
+    cursor: pointer;
+    background-color: #157a74;
+  }
 }

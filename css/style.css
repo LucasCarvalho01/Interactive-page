@@ -440,6 +440,13 @@ progress::-moz-progress-bar {
   cursor: pointer;
 }
 
+.expired #reward1:hover,
+.expired #reward2:hover,
+.expired #reward3:hover {
+  cursor: not-allowed;
+  background-color: rgba(0, 0, 0, .2);
+}
+
 .amount span {
   font-size: 1rem;
 }

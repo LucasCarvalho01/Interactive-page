@@ -95,7 +95,7 @@ export default class MakePledge {
     const divOption = document.querySelector(selector);
 
     divOption.appendChild(this.enterPledge);
-    this.enterPledge.style.display = 'block';
+    this.enterPledge.style.display = 'flex';
     this.submit.dataset.option = value;
 
     this.submit.removeEventListener('click', this.foo);
