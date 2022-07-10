@@ -15,3 +15,5 @@ showData.init();
 // Class that updates current values on page
 const makePledge = new MakePledge('modal', 'back', 'reward1', 'reward2', 'reward3');
 makePledge.init();
+
+console.log('oi');
