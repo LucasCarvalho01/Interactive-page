@@ -107,9 +107,8 @@ export default class MakePledge {
 
   foo(event) {
     event.preventDefault();
-    const option = event.target.dataset.option;
-    debugger;
-    console.log(option);
+    // const option = event.target.dataset.option;
+    const { option } = event.target.dataset;
 
     // Check if the input value is at least the minimum required for that model
     const valid = this.inputValue.value >= this.values[option];

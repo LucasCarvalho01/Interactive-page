@@ -91,6 +91,7 @@ export default class ShowData {
     const valueOnModal = document.querySelector(`#modal div[data-option=${option}] span[data-stand]`);
     const sectionBtn = section.querySelector('button');
     const modalOption = document.querySelector(`#modal div[data-option=${option}]`);
+    const inputModal = modalOption.querySelector('input');
 
     value.innerHTML = this.optionRemaining(option).toLocaleString();
     valueOnModal.innerHTML = this.optionRemaining(option);
@@ -101,6 +102,8 @@ export default class ShowData {
       sectionBtn.dataset.soldout = '';
       modalOption.classList.add('soldout');
       modalOption.dataset.soldout = '';
+      inputModal.dataset.soldout = '';
+      inputModal.setAttribute('disabled', true);
     }
   }
 
