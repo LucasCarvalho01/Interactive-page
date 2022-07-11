@@ -1,6 +1,6 @@
 # Crowdfunding interactive page
 
-<img src="./design/desktop-preview.jpg" style="width: 70%;">
+<img src="./design/desktop-preview.jpg" style="width: 80%;">
 
 ## Table of contents
 
