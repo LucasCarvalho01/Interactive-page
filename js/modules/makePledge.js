@@ -159,10 +159,11 @@ export default class MakePledge {
   }
 
   closeModal(event) {
-    if(event.target === this.btnCloseModal || event.key === 'Escape') {
-      window.removeEventListener('keydown', this.closeModal);
-      this.modal.style.display = 'none';
+    if(event.key && event.key !== 'Escape') {
+      return;
     }
+
+    this.modal.style.display = 'none';
   }
 
   init() {
