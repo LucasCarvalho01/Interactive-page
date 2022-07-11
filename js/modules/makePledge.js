@@ -30,12 +30,13 @@ export default class MakePledge {
   }
 
   values = {
-    stand: 0,
+    stand: 0.10,
     bamboo: 25,
     black: 75,
     maho: 200,
   };
 
+  // For each button that makes a pledge, add event listener of clicking
   addEvent() {
     this.buttons.forEach((btn) => {
       btn.addEventListener('click', (event) => {
@@ -57,14 +58,16 @@ export default class MakePledge {
         this.scrollTo(getDataset.option);
       }
 
-      // Add event listener on modal close button
+      // Add event listener on modal close button, and for pressing esc
       this.btnCloseModal.addEventListener('click', this.closeModal);
+      window.addEventListener('keydown', this.closeModal);
 
       // When user select/change option selected on modal
       this.form.addEventListener('change', (e) => {
+        const isSoldout = 'soldout' in e.target.dataset;
         // Only handle the choose if change was not from the input pledge, nor submit button
         // And is not soldout
-        if(!(e.target === this.inputValue) && !(e.target === this.submit)) {
+        if(!(e.target === this.inputValue) && !(e.target === this.submit) && !(isSoldout)) {
           this.handleChoose(e);
         }
       });
@@ -105,6 +108,8 @@ export default class MakePledge {
   foo(event) {
     event.preventDefault();
     const option = event.target.dataset.option;
+    debugger;
+    console.log(option);
 
     // Check if the input value is at least the minimum required for that model
     const valid = this.inputValue.value >= this.values[option];
@@ -154,8 +159,11 @@ export default class MakePledge {
     window.scrollTo(0, 0);
   }
 
-  closeModal() {
-    this.modal.style.display = 'none';
+  closeModal(event) {
+    if(event.target === this.btnCloseModal || event.key === 'Escape') {
+      window.removeEventListener('keydown', this.closeModal);
+      this.modal.style.display = 'none';
+    }
   }
 
   init() {

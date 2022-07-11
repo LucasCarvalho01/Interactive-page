@@ -9,6 +9,7 @@ export default class Menu {
 
   openMenu() {
     this.actualMenu.classList.toggle('active');
+    this.changeIconMenu();
     this.eventClose();
   }
 
@@ -17,6 +18,7 @@ export default class Menu {
   closeMenu(event) {
     if(event.target.tagName !== 'A' && event.target !== this.menu.firstElementChild) {
       this.actualMenu.classList.remove('active');
+      this.changeIconHam();
       window.removeEventListener('touchstart', this.closeMenu);
     }
   }
