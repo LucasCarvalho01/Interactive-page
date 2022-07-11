@@ -2,6 +2,10 @@
 
 /* Ao clicar no menu */
 
+.menu-desktop {
+  display: none;
+}
+
 .menu {
   display: flex;
   position: fixed;
@@ -62,4 +66,27 @@
   position: relative;
   top: -1rem;
   right: -1rem;
+}
+
+
+@media (min-width: 900px) {
+  .menu-desktop {
+    display: flex;
+    /* gap: 1.5rem; */
+  }
+
+  .menu-desktop li a {
+    color: #fff;
+    padding: 1rem;
+    transition: .2s;
+  }
+
+  .menu-desktop li a:hover {
+    font-weight: 700;
+  }
+
+  progress {
+    flex-basis: 100%;
+    margin-top: 3rem;
+  }
 }

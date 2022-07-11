@@ -67,12 +67,15 @@ export default class ShowData {
       const currentValue = option.classList[1];
       const currentBtn = option.querySelector('button');
       const optionModal = document.querySelector(`#modal div[data-option=${currentValue}]`);
+      const inputModal = optionModal.querySelector('input');
       // If soldout, apply right styles
       if(sessionStorage[currentValue] == 0) {
         option.classList.add('expired');
         currentBtn.dataset.soldout = '';
         optionModal.classList.add('soldout');
         optionModal.dataset.soldout = '';
+        inputModal.dataset.soldout = '';
+        inputModal.setAttribute('disabled', true);
       }
     });
   }

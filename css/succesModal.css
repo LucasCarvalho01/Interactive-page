@@ -49,4 +49,26 @@
   font-size: .875rem;
   font-weight: 500;
   letter-spacing: 1px;
+  transition: .2s;
+}
+
+@media (min-width: 900px) {
+  .success-wrapper {
+    max-width: 32rem;
+    padding: 3rem;
+  }
+
+  .success-wrapper h2 {
+    font-size: 1.5rem;
+  }
+
+  .success-wrapper p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  #completed:hover {
+    cursor: pointer;
+    background-color: #157a74;
+  }
 }
